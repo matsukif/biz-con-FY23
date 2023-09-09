@@ -1,13 +1,3 @@
-from collections import deque
-from typing import Dict, List, Optional
-from langchain import LLMChain, OpenAI, PromptTemplate
-from langchain.embeddings import HuggingFaceEmbeddings
-from langchain.llms import BaseLLM
-from langchain.vectorstores import FAISS
-from langchain.vectorstores.base import VectorStore
-from langchain.document_loaders import UnstructuredURLLoader
-from pydantic import BaseModel, Field
-from langchain.text_splitter import RecursiveCharacterTextSplitter
 import streamlit as st
 import openai
 from bs4 import BeautifulSoup
