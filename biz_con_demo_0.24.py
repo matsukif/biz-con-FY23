@@ -21,7 +21,7 @@ def main():
 #     )
     
     with st.sidebar:
-        openai_api_key = st.text_input('Your OpenAI API KEY', type="password")
+#        openai_api_key = st.text_input('Your OpenAI API KEY', type="password")
         model_name = st.selectbox("Model name", options=["gpt-3.5-turbo-0613", "gpt-4"])
         temperature = st.slider(
             label="Temperature",
@@ -30,12 +30,6 @@ def main():
             step=0.1,
             value=0.0,
         )
-
-#     st.title("babyAGI Streamlit")
-#     objective = st.text_input("Input Ultimate goal", "Solve world hunger")
-#     first_task = st.text_input("Input Where to start", "Develop a task list")
-#     max_iterations = st.number_input("Max iterations", value=3, min_value=1, step=1)
-#     button = st.button("Run")
 
     st.title("法人不芳情報収集")
 #    target_company = st.text_input("調査したい企業名を入力してください")
@@ -65,7 +59,8 @@ def main():
 
     if button:
         try:
-            openai.api_key = openai_api_key
+#            openai.api_key = openai_api_key
+            openai.api_key = st.secrets.OpenAIAPI.openai_api_key
 
 #記事要約
             system_prompt1 = """
