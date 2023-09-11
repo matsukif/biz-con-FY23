@@ -61,7 +61,7 @@ def main():
             step=0.1,
             value=0.0,
         )
-        system_prompt3_input = st.text_area("「３．悪事を働いた会社」のプロンプト",value=system_prompt3, height=300)
+        system_prompt3_input = st.text_area("「３．悪事を働いた会社」のプロンプト",value=system_prompt3, height=1000)
 
 
     st.title("法人不芳情報抽出 ver0.2")
