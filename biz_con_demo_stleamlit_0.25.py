@@ -262,7 +262,7 @@ def main():
 
             st.write("")
             st.write("========================================================================================")
-            st.write("４．Wikipedia検索結果（対象：悪事を働いた会社")
+            st.write("４．Wikipedia検索結果（対象：悪事を働いた会社）")
 
             for item in company_list:
                 title = item
