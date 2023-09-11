@@ -65,7 +65,7 @@ def main():
         system_prompt3_input = st.text_input("「３．悪事を働いた会社」のプロンプト",value=system_prompt3)
 
 
-    st.title("法人不芳情報抽出 ver0.1")
+    st.title("法人不芳情報抽出 ver0.2")
 #    target_company = st.text_input("調査したい企業名を入力してください")
     url = st.text_input("調査したい記事のURLを入力してください")
     if url:
