@@ -31,7 +31,7 @@ def main():
             value=0.0,
         )
 
-    st.title("法人不芳情報収集 ver0.1")
+    st.title("法人不芳情報抽出 ver0.1")
 #    target_company = st.text_input("調査したい企業名を入力してください")
     url = st.text_input("調査したい記事のURLを入力してください")
     if url:
