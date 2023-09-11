@@ -105,7 +105,8 @@ def main():
             """
 
             response1 = openai.ChatCompletion.create(
-                model = model_name,
+#                model = model_name,
+                model = "gpt-3.5-turbo-0613",
                 temperature = temperature,
                 messages=[
                     {"role":"system", "content": system_prompt1},
@@ -114,9 +115,8 @@ def main():
             )
 
             article_summary = response1["choices"][0]["message"]["content"]
-            st.write("１．記事要約")            
+            st.write("１．記事要約（gpt-3.5-turbo-0613固定）")       
             st.write(article_summary)
-
 
 #会社名の抽出（ターゲット会社との関係性付き）
             system_prompt2 = """
