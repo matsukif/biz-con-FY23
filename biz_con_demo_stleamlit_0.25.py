@@ -131,11 +131,11 @@ def main():
             st.write("２．記事にある会社（最大20社）")
 
             number = 1
-#            company_list = []
+            company_list = []
 
             for item in company_name_json["companies"]:
                 st.write(f"({number}) {item['name']} ： {item['position']}")
-#                company_list.append(item['name'])
+                company_list.append(item['name'])
                 number += 1
 
 
@@ -143,12 +143,12 @@ def main():
             system_prompt3 = """
             このスレッドでは以下ルールを厳格に守ってください。
             あなたはニュース記事から悪事を働いた会社の名前を抽出して回答するシステムです。
-            ・記事の中で悪事を働いたと記載されている会社名のみ抽出します。悪事に間接的に加担した会社も抽出します。
+            ・記事の中で悪事を働いたと記載された会社名を抽出します。悪事に間接的に加担した会社も抽出します。
             ・被害をうけた会社や、悪事に関係ない会社は抽出しないでください。
+            ・悪事を働いたり加担した可能性が少しでもある場合は、会社名を抽出し、会社名の最後に"（悪事を働いた可能性あり）"を追加してください。
             ・記事には本文の他にアクセスランキングや広告がありますが、本文からのみ会社名を抽出してください。
             ・会社名が20社以上の場合は20社目まで出力してください。
             ・会社ごとどんな悪いことをしたか40文字程度で記載してください。
-            ・悪事を働いたか判断が難しい場合は、会社名を抽出し、悪いことの内容の最初に"（悪事を働いた可能性あり）"と記載してください。
             ・応答はjsonとしてください。"companies"というキーの配下に会社名は"name"、悪いことの内容は"problem"を設定してください。
             ・jsonのフォーマットは以下です。
                 {
@@ -188,11 +188,11 @@ def main():
             st.write("３．悪事を働いた会社（最大20社）")
 
             number = 1
-            company_list = []
+#            company_list = []
 
             for item in company_name_json2["companies"]:
                 st.write(f"({number}) {item['name']} ： {item['problem']}")
-                company_list.append(item['name'])
+#                company_list.append(item['name'])
                 number += 1
 
 
@@ -264,7 +264,8 @@ def main():
 
             st.write("")
             st.write("========================================================================================")
-            st.write("４．Wikipedia検索結果（対象：悪事を働いた会社）")
+#            st.write("４．Wikipedia検索結果（対象：悪事を働いた会社）")
+            st.write("４．Wikipedia検索結果")
 
             for item in company_list:
                 title = item
